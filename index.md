@@ -82,6 +82,10 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
+# Starter Project - Weevil Eyes
+The components of my Weevil Eyes are a Weevil Eye Circuit Board, 2 light emitting diodes (LED’s), a 47K resistor, two 220K resistors, a Bipolar Junction Transistor (BJT), a photocell, a battery holder, and a 20mm battery. A photocell is an electrical component where when it is covered with your finger there is no resistance and the electrical current can flow to the transistor. In a BJT, there are three components which are a collector, base, and emitter. The collector is connected to the photocell, the base is connected to the battery, and the emitter is connected to the resistors. When the battery passes an electrical current through the base it opens a gate. This allows the current generated from the photocell to pass through the collector and emitter. The resistors restrict and regulate the electrical current. This creates a closed circuit that powers the LEDs. However, when your finger is removed from the photocell, there is resistance and the electrical current cannot pass through the collector and emitter. This means that the circuit is an open circuit and the LEDs won’t turn on.
+
+
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
