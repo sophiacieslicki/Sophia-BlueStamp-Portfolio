@@ -60,6 +60,8 @@ You should comment out all portions of your portfolio that you have not complete
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7U8yNla3_gU?si=KJVs3y6t1QKK2BAB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<br>
+
 My main project is the Fitness Rehab device. This project requires using Edge Impulse to create a machine learning model. Edge Impulse is an online platform where users can create their own machine learning models. My first milestone was to get familiar with the Edge Impulse interface by completing one of the tutorials and gaining a deeper understanding of how machine learning works. One of the main parts of my project is machine learning. Therefore, being confident in my understanding and abilities to create a machine learning model is essential to my project.
 
 The tutorial that I used was an audio classifier model. My final model had 7 classifiers: hello_dad, hello_frederick, hello_nella, hello_sophia, hello_mom, noise, and unknown. The model works by having the user say something into the microphone of a computer or phone. If the user says one of the hello classifiers, the classifier will show on the screen. It will also show how accurate the model's prediction is based on the data that it has. The ideal accuracy for a machine learning model such as this one is 80%. If the model isn't able to classify what the user is saying into one of the five hello classifiers then it will display “unknown” or “noise” as well as the accuracy.
@@ -117,8 +119,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 # Starter Project - Weevil Eyes
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GFcvl3yDpks?si=2sdZIt-8Nk4kHONy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
+<br>
   I chose Weevil Eyes as my starter project because I wanted to gain a basic understanding of some of the fundamental electrical components used in electrical engineering. When pressing my finger on the photocell of my Weevil Eyes project, the light emitting diodes (LED’s) light up and when I remove my finger from the photocell the LED’s go dark. 
   
   The components of my Weevil Eyes are a Weevil Eye Circuit Board, 2 LED’s, a 47K resistor, two 220K resistors, a Bipolar Junction Transistor (BJT), a photocell, a battery holder, and a 20mm battery. A photocell is a light sensitive resistor: as light increases, the resistance decreases and vice versa. **Figure** shows that the voltage of the battery (3V) remains constant and the current depends on the resistance of the photocell (R4 in **Figure 1**). Basically R4 and R3 form a voltage divider which controls the voltage of the base. **Figure 2** shows the BJT.
