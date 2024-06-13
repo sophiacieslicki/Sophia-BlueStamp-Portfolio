@@ -18,6 +18,7 @@ You should comment out all portions of your portfolio that you have not complete
 |:--:|:--:|:--:|:--:|
 | Sophia C | Mountain View High School | Biomedical Engineering | Rising Junior
 
+![alt text](image.jpg)
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 -->
@@ -58,6 +59,17 @@ You should comment out all portions of your portfolio that you have not complete
 # First Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7U8yNla3_gU?si=KJVs3y6t1QKK2BAB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<pre> My main project is the Fitness Rehab device. This project requires using Edge Impulse to create a machine learning model. Edge Impulse is an online platform where users can create their own machine learning models. My first milestone was to get familiar with the Edge Impulse interface by completing one of the tutorials and gaining a deeper understanding of how machine learning works. One of the main parts of my project is machine learning. Therefore, being confident in my understanding and abilities to create a machine learning model is essential to my project.
+
+The tutorial that I used was an audio classifier model. My final model had 7 classifiers: hello_dad, hello_frederick, hello_nella, hello_sophia, hello_mom, noise, and unknown. The model works by having the user say something into the microphone of a computer or phone. If the user says one of the hello classifiers, the classifier will show on the screen. It will also show how accurate the model's prediction is based on the data that it has. The ideal accuracy for a machine learning model such as this one is 80%. If the model isn't able to classify what the user is saying into one of the five hello classifiers then it will display “unknown” or “noise” as well as the accuracy.
+
+One of the challenges that I had to overcome was data bias because of underfitting. When I first trained the model I only had three classes: hello_sophia, noise, and unknown. Since there weren't that many classifications I didn't need much data in order for the model to determine the relationship between the classifications. However, when I added the other four classifiers I encountered underfitting. Since I didn't have much data for the new hello classifiers and much more for hello_sophia, the model was unable to determine the relationships between the classifications. It would automatically default to hello_sophia because that is where I had most of my data. In order to overcome this challenge I had to record more data for my new classes. Not only did this help remove my data bias but it also improved my accuracy.
+
+Something that I learned in this milestone was data splitting. When I was recording my data for my model I used recordings that were 1-3min long with me repeating the classifier over and over again. This led to a low accuracy because the model wasn’t able to determine specifically when I was saying the classifier. In order to overcome this challenge I split my recordings. Splitting into small manageable chunks on Edge Impulse helps organize each individual classification so that it has a train/test split of 80/20 respectfully. 
+
+Overall, through doing this tutorial I learned a lot about machine learning and how to use Edge Impulse. I am excited to implement what I have learned into my Fitness Rehab device.
+
 
 <!---
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
@@ -109,15 +121,20 @@ Don't forget to place the link of where to buy each component inside the quotati
 
   I chose Weevil Eyes as my starter project because I wanted to gain a basic understanding of some of the fundamental electrical components used in electrical engineering. When pressing my finger on the photocell of my Weevil Eyes project, the light emitting diodes (LED’s) light up and when I remove my finger from the photocell the LED’s go dark. 
   
-  The components of my Weevil Eyes are a Weevil Eye Circuit Board, 2 LED’s, a 47K resistor, two 220K resistors, a Bipolar Junction Transistor (BJT), a photocell, a battery holder, and a 20mm battery. A photocell is a light sensitive resistor: as light increases, the resistance decreases and vice versa. **Figure[^1]** shows that the voltage of the battery (3V) remains constant and the current depends on the resistance of the photocell (R4 in **Figure 1**). Basically R4 and R3 form a voltage divider which controls the voltage of the base. **Figure 2** shows the BJT.
+  The components of my Weevil Eyes are a Weevil Eye Circuit Board, 2 LED’s, a 47K resistor, two 220K resistors, a Bipolar Junction Transistor (BJT), a photocell, a battery holder, and a 20mm battery. A photocell is a light sensitive resistor: as light increases, the resistance decreases and vice versa. **Figure** shows that the voltage of the battery (3V) remains constant and the current depends on the resistance of the photocell (R4 in **Figure 1**). Basically R4 and R3 form a voltage divider which controls the voltage of the base. **Figure 2** shows the BJT.
   
   There are three BJT components: 1) collector, 2) base, and 3) emitter. The collector is connected to ground, the base is connected to the photocell, and the emitter is connected to the resistors and LEDs, all shown in **Figure 1**. The resistors restrict and regulate the electrical current. When your finger is removed from the photocell, there is resistance and the electrical current cannot pass through the collector and emitter. This means that the circuit is an open circuit and the LEDs won’t turn on.
  
   I am excited to begin my Fitness Rehab Device as my main project and strengthen my electrical engineering skill set.
 
+<div class="img-with-text">
+    <img src="(Figure1_WeevilEyes.png)" alt="sometext" />
+    <p>Some text</p>
+</div>
+
 ![Headstone Image](Figure1_WeevilEyes.png)
 
-[^1]: Figure 1: Schematic showing Weevil Eye circuit. R4 is the photocell and is the only sensor. This controls the LED lights.
+Figure 1: Schematic showing Weevil Eye circuit. R4 is the photocell and is the only sensor. This controls the LED lights.
 Source: https://www.youtube.com/watch?v=Az2TM6Gtp0o
 
 ![Headstone Image](Figure2_WeevilEyes.png)
