@@ -18,7 +18,7 @@ You should comment out all portions of your portfolio that you have not complete
 |:--:|:--:|:--:|:--:|
 | Sophia C | Mountain View High School | Biomedical Engineering | Rising Junior
 
-![alt text](image.jpg)
+![alt text](SophiaC_Headshot.heic)
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 -->
