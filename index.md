@@ -21,7 +21,7 @@ You should comment out all portions of your portfolio that you have not complete
 <!---
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 -->
-![Headstone Image](SophiaC_Headshot.heic)
+![Headstone Image](SophiaC_Headshot.jpg)
   
 # Final Milestone
 
@@ -59,28 +59,6 @@ You should comment out all portions of your portfolio that you have not complete
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7U8yNla3_gU?si=KJVs3y6t1QKK2BAB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<br>
-
-My main project is the Fitness Rehab device. This project requires using Edge Impulse to create a machine learning model. Edge Impulse is an online platform where users can create their own machine learning models. My first milestone was to get familiar with the Edge Impulse interface by completing one of the tutorials and gaining a deeper understanding of how machine learning works. One of the main parts of my project is machine learning. Therefore, being confident in my understanding and abilities to create a machine learning model is essential to my project.
-
-The tutorial that I used was an audio classifier model. My final model had 7 classifiers: hello_dad, hello_frederick, hello_nella, hello_sophia, hello_mom, noise, and unknown. The model works by having the user say something into the microphone of a computer or phone. If the user says one of the hello classifiers, the classifier will show on the screen. It will also show how accurate the model's prediction is based on the data that it has. The ideal accuracy for a machine learning model such as this one is 80%. If the model isn't able to classify what the user is saying into one of the five hello classifiers then it will display “unknown” or “noise” as well as the accuracy.
-
-One of the challenges that I had to overcome was data bias because of underfitting. When I first trained the model I only had three classes: hello_sophia, noise, and unknown. Since there weren't that many classifications I didn't need much data in order for the model to determine the relationship between the classifications. However, when I added the other four classifiers I encountered underfitting. Since I didn't have much data for the new hello classifiers and much more for hello_sophia, the model was unable to determine the relationships between the classifications. It would automatically default to hello_sophia because that is where I had most of my data. In order to overcome this challenge I had to record more data for my new classes. Not only did this help remove my data bias but it also improved my accuracy.
-
-Something that I learned in this milestone was data splitting. When I was recording my data for my model I used recordings that were 1-3min long with me repeating the classifier over and over again. This led to a low accuracy because the model wasn’t able to determine specifically when I was saying the classifier. In order to overcome this challenge I split my recordings. Splitting into small manageable chunks on Edge Impulse helps organize each individual classification so that it has a train/test split of 80/20 respectfully. 
-
-Overall, through doing this tutorial I learned a lot about machine learning and how to use Edge Impulse. I am excited to implement what I have learned into my Fitness Rehab device.
-
-![Headstone Image](Milestone1_Image1.jpg)
-<be>
-This is my Edge Impulse model. I said “hello frederick” into the microphone of my computer and the model responded by showing the hello_frederick classifier and an accuracy of 91%. 
-
-
-![Headstone Image](Milestone1_Image2.png)
-<be>
-This is how I split my data recording on Edge Impulse. This recording was originally 2min. I was able to split the data by zooming in on the individual waveforms. I added segments in order for Edge Impulse to understand specifically what parts of the audio I needed to split. After splitting the recording, I was able to turn this 2min recording into 1-2 sec data sets. 
-
-
 <!---
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
 
@@ -117,6 +95,7 @@ void loop() {
 # Bill of Materials
 <!--- Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
 Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. -->
+
 <!---
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
@@ -124,6 +103,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 -->
+
 # Starter Project - Weevil Eyes
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GFcvl3yDpks?si=2sdZIt-8Nk4kHONy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
