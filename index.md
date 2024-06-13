@@ -72,6 +72,15 @@ Something that I learned in this milestone was data splitting. When I was record
 
 Overall, through doing this tutorial I learned a lot about machine learning and how to use Edge Impulse. I am excited to implement what I have learned into my Fitness Rehab device.
 
+![Headstone Image](Milestone1_Image1.jpg)
+<be>
+This is my Edge Impulse model. I said “hello frederick” into the microphone of my computer and the model responded by showing the hello_frederick classifier and an accuracy of 91%. 
+
+
+![Headstone Image](Milestone1_Image2.png)
+<be>
+This is how I split my data recording on Edge Impulse. This recording was originally 2min. I was able to split the data by zooming in on the individual waveforms. I added segments in order for Edge Impulse to understand specifically what parts of the audio I needed to split. After splitting the recording, I was able to turn this 2min recording into 1-2 sec data sets. 
+
 
 <!---
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
