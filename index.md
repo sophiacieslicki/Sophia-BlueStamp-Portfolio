@@ -115,8 +115,7 @@ Don't forget to place the link of where to buy each component inside the quotati
  
   I am excited to begin my Fitness Rehab Device as my main project and strengthen my electrical engineering skill set.
 
-![Headstone Image](Figure1_WeevilEyes.png)
-[^1]: Figure 1: Schematic showing Weevil Eye circuit. R4 is the photocell and is the only sensor. This controls the LED lights.
+[^1]: ![Headstone Image](Figure1_WeevilEyes.png) Figure 1: Schematic showing Weevil Eye circuit. R4 is the photocell and is the only sensor. This controls the LED lights.
 Source: https://www.youtube.com/watch?v=Az2TM6Gtp0o
 
 ![Headstone Image](Figure2_WeevilEyes.png)
