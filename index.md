@@ -60,7 +60,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7U8yNla3_gU?si=KJVs3y6t1QKK2BAB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<pre> My main project is the Fitness Rehab device. This project requires using Edge Impulse to create a machine learning model. Edge Impulse is an online platform where users can create their own machine learning models. My first milestone was to get familiar with the Edge Impulse interface by completing one of the tutorials and gaining a deeper understanding of how machine learning works. One of the main parts of my project is machine learning. Therefore, being confident in my understanding and abilities to create a machine learning model is essential to my project.
+My main project is the Fitness Rehab device. This project requires using Edge Impulse to create a machine learning model. Edge Impulse is an online platform where users can create their own machine learning models. My first milestone was to get familiar with the Edge Impulse interface by completing one of the tutorials and gaining a deeper understanding of how machine learning works. One of the main parts of my project is machine learning. Therefore, being confident in my understanding and abilities to create a machine learning model is essential to my project.
 
 The tutorial that I used was an audio classifier model. My final model had 7 classifiers: hello_dad, hello_frederick, hello_nella, hello_sophia, hello_mom, noise, and unknown. The model works by having the user say something into the microphone of a computer or phone. If the user says one of the hello classifiers, the classifier will show on the screen. It will also show how accurate the model's prediction is based on the data that it has. The ideal accuracy for a machine learning model such as this one is 80%. If the model isn't able to classify what the user is saying into one of the five hello classifiers then it will display “unknown” or “noise” as well as the accuracy.
 
@@ -133,11 +133,12 @@ Don't forget to place the link of where to buy each component inside the quotati
 </div>
 
 ![Headstone Image](Figure1_WeevilEyes.png)
-
+<br>
 Figure 1: Schematic showing Weevil Eye circuit. R4 is the photocell and is the only sensor. This controls the LED lights.
 Source: https://www.youtube.com/watch?v=Az2TM6Gtp0o
 
 ![Headstone Image](Figure2_WeevilEyes.png)
+<br>
 Figure 2: Schematic that shows how the Bipolar Junction Transistor (BJT) in my Weevil Eye project.
 
 
