@@ -130,7 +130,7 @@ Source: https://www.youtube.com/watch?v=Az2TM6Gtp0o
 
 # Other Resources
 
-- [Example 1](https://mlu-explain.github.io/)
+- [MLU-EXPLAIN](https://mlu-explain.github.io/)
 <!---
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
