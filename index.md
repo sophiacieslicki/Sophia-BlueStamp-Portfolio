@@ -86,11 +86,13 @@ You should comment out all portions of your portfolio that you have not complete
 ![Headstone Image](Milestone1_Figure2.png)
 <br>
 **Figure 2:** This image shows how my validation set performed through a confusion matrix. The actual values are in the column on the left and the predicted values are in the row at the top of the confusion matrix. Looking at this confusion matrix, something that I can do to improve my matrix for the future is add more data for the hello_dad label in order to increase its accuracy on the confusion matrix.
+
 <br>
 
 ![Headstone Image](Milestone1_Figure3.png)
 <br>
 **Figure 3:** This is how I split my data recording on Edge Impulse. This recording was originally 2min. I was able to split the data by zooming in on the individual waveforms. I added segments in order for Edge Impulse to understand specifically what parts of the audio I needed to split. After splitting the recording, I was able to turn this 2min recording into 1-2 sec data sets. 
+
 <br>
 
 ![Headstone Image](Milestone1_Figure4.png)
