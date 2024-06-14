@@ -129,8 +129,9 @@ Source: https://www.youtube.com/watch?v=Az2TM6Gtp0o
 **Figure 2:** Schematic that shows how the Bipolar Junction Transistor (BJT) in my Weevil Eye project.
 
 # Other Resources
-<!---
+
 - [Example 1](https://mlu-explain.github.io/)
+<!---
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
 
