@@ -76,18 +76,19 @@ You should comment out all portions of your portfolio that you have not complete
 <br>
 &emsp; &emsp; Overall, through doing this tutorial I learned a lot about machine learning and how to use Edge Impulse and improve models and data. I am excited to implement what I have learned into my Fitness Rehab device.
 
+<br>
 ![Headstone Image](Milestone1_Figure1.png)
 <br>
 **Figure 1:** This is a live test of my machine learning model through Edge Impulse. I said “hello frederick” into the microphone of my computer and the model responded by showing the hello_frederick class and guessed this with an accuracy of 88% and 91% between timestamps.
-
+<br>
 ![Headstone Image](Milestone1_Figure2.png)
 <br>
 **Figure 2:** This image shows how my validation set performed through a confusion matrix. The actual values are in the column on the left and the predicted values are in the row at the top of the confusion matrix. Looking at this confusion matrix, something that I can do to improve my matrix for the future is add more data for the hello_dad label in order to increase its accuracy on the confusion matrix.
-
+<br>
 ![Headstone Image](Milestone1_Figure3.png)
 <br>
 **Figure 3:** This is how I split my data recording on Edge Impulse. This recording was originally 2min. I was able to split the data by zooming in on the individual waveforms. I added segments in order for Edge Impulse to understand specifically what parts of the audio I needed to split. After splitting the recording, I was able to turn this 2min recording into 1-2 sec data sets. 
-
+<br>
 ![Headstone Image](Milestone1_Figure4.png)
 <br>
 **Figure 4:** Flowchart created through Lucid Chart in order to illustrate how I used Edge Impulse to create my machine learning model. The category transfer learning is when I use a pre-existing model but train it for a new task. I used MobileNet as my pre-existing model and changed the final dense layer in order for the model to do my task.
@@ -143,7 +144,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 <br>
 **Figure 1:** Schematic showing Weevil Eye circuit. R4 is the photocell and is the only sensor. This controls the LED lights.
 Source: https://www.youtube.com/watch?v=Az2TM6Gtp0o
-
+<br>
 ![Headstone Image](Figure2_WeevilEyes.png)
 <br>
 **Figure 2:** Schematic that shows how the Bipolar Junction Transistor (BJT) in my Weevil Eye project.
