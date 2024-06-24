@@ -47,6 +47,26 @@ You should comment out all portions of your portfolio that you have not complete
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JMtBTNYhmgg?si=7giFy6QlRSh-T_qE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <br>
+&emsp; &emsp; My second milestone was connecting my Arduino Nano circuit to Edge Impulse and looking at typical accelerometer values for correct shoulder movement. To do this, I had to install edge-impulse-cli and arduino-cli. A command-line interface (CLI) is how a user interacts with their computer through a terminal. This milestone also included assembling the components of my circuit (Organic Light-Emitting Diode (OLED), battery, and switch). My first milestone was learning the mechanics of how machine learning, more specifically, Edge Impulse works in order to train a model. My second milestone builds off of this by setting up the necessary connections between Edge Impulse and my Arduino Nano in order to train my final model. 
+<br>
+&emsp; &emsp; The components to my circuit are an Arduino Nano, an OLED screen, and a switch. **Figure 1** is a schematic that illustrates how my circuit works. The Arduino Nano is currently connected to my computer in order to upload data to Edge Impulse. Once I have trained my model for my next milestone, my Arduino will be connected to a portable battery. My switch is connected to the 3.3V on my Arduino and VCC. My A4 pin is connected to SDA and my A5 pin is connected to SCL. The ground on the OLED screen is connected to ground on the arduino.
+
+<br>
+
+![Headstone Image](Milestone2_Figure1.png)
+<br>
+**Figure 1:** Schematic that illustrates how the different components of my circuit work together. Main components of my circuit: Arduino Nano. OLED screen, switch, and a portable charger.
+
+<br>
+&emsp; &emsp; My Arduino Nano has an accelerometer which is a sensor that tracks the acceleration and orientation of the user's arm.When acceleration and velocity are the same sign it means that the object (in this case the user’s arm) is moving faster. However, when acceleration and velocity have different signs the object is slowing down. Moreover, the Arduino Nano has a gyroscope. A gyroscope measures the orientation of the object. Gyroscopes have a spinning wheel that is able to recognize its orientation. However, my Arduino uses a micro-electromechanical system (MEMS) gyroscope. A MEMS gyroscope works the same as a regular gyroscope except it is scaled down so that it is very small. Orientation and acceleration are both measured on a xyz plane. **Figure 2** shows how the accelerometer gathers its data with respect to the xyz plane. 
+
+<br>
+
+![Headstone Image](Milestone2_Figure1.png)
+<br>
+**Figure 2:** How the accelerometer measures values of acceleration and orientation on the xyz plane.
+
+
 
 <!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
 
