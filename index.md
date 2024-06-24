@@ -65,7 +65,7 @@ The Arduino Nano is able to detect which movements the user is making and use a 
 
 ![Headstone Image](Milestone2_Figure2.png)
 <br>
-**Figure 2:** How the accelerometer measures values of acceleration and orientation on the xyz plane.
+**Figure 2:** How the accelerometer measures values of acceleration and orientation on the xyz plane. Source: https://maker.pro/arduino/tutorial/how-to-use-the-arduino-nano-33-bles-built-in-imu
 
 <br>
 **Figure 3** shows typical accelerometer values for exercise #1 (arm twist exercise on Figure 4). 
