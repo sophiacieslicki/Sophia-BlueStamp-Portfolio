@@ -62,7 +62,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 <br>
 
-![Headstone Image](Milestone2_Figure1.png)
+![Headstone Image](Milestone2_Figure2.png)
 <br>
 **Figure 2:** How the accelerometer measures values of acceleration and orientation on the xyz plane.
 
