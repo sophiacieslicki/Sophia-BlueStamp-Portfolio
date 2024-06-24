@@ -71,14 +71,14 @@ You should comment out all portions of your portfolio that you have not complete
 
 <br>
 
-![Headstone Image](Milestone2_Figure2.png)
+![Headstone Image](Milestone2_Figure3.png)
 <br>
 **Figure 3:** Edge Impulse graph showing typical accelerometer values for exercise #1 of rotator cuff 
 recovery. Acc is the acronym for acceleration and gyr is the acronym for gyroscope. Note how the x values for the gyroscope are really high. Moreover acceleration stays constant and is close to zero.
 
 <br>
 
-![Headstone Image](Milestone2_Figure2.png)
+![Headstone Image](Milestone2_Figure4.png)
 <br>
 **Figure 4:** Rotator cuff recovery exercises that I will be training my Edge Impulse model on. Source: link
 
