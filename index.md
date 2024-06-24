@@ -66,7 +66,28 @@ You should comment out all portions of your portfolio that you have not complete
 <br>
 **Figure 2:** How the accelerometer measures values of acceleration and orientation on the xyz plane.
 
+<br>
+**Figure 3** shows typical accelerometer values for exercise #1 (arm twist exercise on Figure 4). 
 
+<br>
+
+![Headstone Image](Milestone2_Figure2.png)
+<br>
+**Figure 3:** Edge Impulse graph showing typical accelerometer values for exercise #1 of rotator cuff 
+recovery. Acc is the acronym for acceleration and gyr is the acronym for gyroscope. Note how the x values for the gyroscope are really high. Moreover acceleration stays constant and is close to zero.
+
+<br>
+
+![Headstone Image](Milestone2_Figure2.png)
+<br>
+**Figure 4:** Rotator cuff recovery exercises that I will be training my Edge Impulse model on. Source: link
+
+<br>
+&emsp; &emsp; Since I was constantly moving my arm when collecting this data, the acceleration of my arm stayed close to 0 because my arm wasn’t slowing or speeding up. The only values that change are the gyrX, gyrY, and gyrZ values. This is because as I move my arm the orientation changes and the gyroscope is the component that detects these changes.
+<br>
+&emsp; &emsp; One of the challenges that I had to overcome was connecting my Arduino Nano to Edge Impulse on my computer. After going through all the steps posted on the Edge Impulse website, I kept on getting the error that the command edge-impulse-daemon --clean was not found. The edge-impulse-daemon command is an important command because it is what connects the Arduino Nano to Edge Impulse. The solution to this problem was that I had to download chown. The chown command changes the ownership of a directory which ultimately helped solve my problem. However, when I revisited my project the next day, the same command not found error would appear when running edge-impulse-daemon --clean. Although, since chown was already installed on my computer this wasn't the problem. The solution to this problem was that I had to run the command brew update. This command updates the Homebrew package manager. Homebrew is an essential software that makes it easy to install other softwares.
+<br>
+&emsp; &emsp; In order to finish my project I still have to train my model, code the OLED screen to show a progress bar, and assemble all the components for my project. I am close to finishing my project and I am excited to see what the end result will look like.
 
 <!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
 
