@@ -80,7 +80,8 @@ recovery. Acc is the acronym for acceleration and gyr is the acronym for gyrosco
 
 ![Headstone Image](Milestone2_Figure4.png)
 <br>
-**Figure 4:** Rotator cuff recovery exercises that I will be training my Edge Impulse model on. Source: link
+**Figure 4:** Rotator cuff recovery exercises that I will be training my Edge Impulse model on. Source: https://darebee.com/workouts/rotator-cuff-workout.html
+
 <br>
 &emsp; &emsp; Since I was constantly moving my arm when collecting this data, the acceleration of my arm stayed close to 0 because my arm wasn’t slowing or speeding up. The only values that change are the gyrX, gyrY, and gyrZ values. This is because as I move my arm the orientation changes and the gyroscope is the component that detects these changes.
 <br>
