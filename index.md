@@ -68,9 +68,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 <br>
 **Figure 3** shows typical accelerometer values for exercise #1 (arm twist exercise on Figure 4). 
-
 <br>
-
 ![Headstone Image](Milestone2_Figure3.png)
 <br>
 **Figure 3:** Edge Impulse graph showing typical accelerometer values for exercise #1 of rotator cuff 
