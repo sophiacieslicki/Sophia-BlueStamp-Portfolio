@@ -61,7 +61,7 @@ In order to complete my 3rd milestone I had to 3D print a custom box for all the
 
 &emsp; &emsp; **Figure 4** shows the accuracy of my model on the training data and testing data. The accuracy of my model on training data is 100.0%. This is when the model runs with data that was used to train the model. The accuracy of my model on testing data was 99.40%. This percentage shows how accurately my model was able to classify data in the correct class with data that it hasn't seen. **Figure 5** shows why having a train and test set is important. If a machine learning model has a high accuracy with the train data set and a low accuracy with the test data this means that the model is memorizing the data instead of getting trained.
 
-![Headstone Image](3Milestone_Figure3.png)
+![Headstone Image](3Milestone_Figure4.png)
 <br>
 **Figure 4:** This diagram shows the accuracy of my Edge Impulse Model with the training and testing data.
 
