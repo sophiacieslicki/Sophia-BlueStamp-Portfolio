@@ -65,6 +65,7 @@ In order to complete my 3rd milestone I had to 3D print a custom box for all the
 ![Headstone Image](Figure4.png)
 <br>
 Source: <a href="https://www.v7labs.com/blog/train-validation-test-set"> Link </a> 
+<br>
 **Figure 5:** This diagram shows the accuracy of my Edge Impulse Model with the training and testing data.
 
 <!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
