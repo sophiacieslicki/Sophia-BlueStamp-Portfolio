@@ -1,6 +1,6 @@
 # Fitness Rehab Device
 
-This Fitness Rehab Device is targeted toward people with shoulder injuries more specifically athletes and musicians such as guitarists. Using machine learning, the device can track correct shoulder movements for shoulder recovery. If the user performs the correct shoulder exercises for recovery, the device will be able to detect this and fill a progress bar.
+&emsp; &emsp; This Fitness Rehab Device is targeted toward people with shoulder injuries more specifically athletes and musicians such as guitarists. Using machine learning, the device can track correct shoulder movements for shoulder recovery. If the user performs the correct shoulder exercises for recovery, the device will be able to detect this and fill a progress bar.
 
 <!--- Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails! -->
 
@@ -25,6 +25,9 @@ You should comment out all portions of your portfolio that you have not complete
 <img src="SophiaC_Headshot.jpg" 
      width="400" 
      height="500" />
+
+# Demo Night Presentation
+<iframe width="560" height="315" src="https://www.youtube.com/embed/70ylYTanC2A?si=SwDHZc2_kqZdVyjn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   
 # Final Milestone
 
