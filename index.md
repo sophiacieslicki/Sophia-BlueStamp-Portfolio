@@ -28,6 +28,45 @@ You should comment out all portions of your portfolio that you have not complete
   
 # Final Milestone
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kukRyGKWqIg?si=n8S5W3NMdumCRXMF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+&emsp; &emsp; This <a href="https://studio.edgeimpulse.com/studio/427768"> Link </a> is the link for my Edge Impulse Model. This will show all of the data that I used to train my Fitness Rehab Device Mode and my neural network classifiers. 
+In order to complete my 3rd milestone I had to 3D print a custom box for all the components of my circuit and have the organic light-emitting diode display (OLED) screen show progress that the user is making based on my Edge Impulse model. This milestone was about finishing up any loose ends and making a final product.
+<br>
+&emsp; &emsp; **Figure 1** shows my final Fitness Rehab Device. This device will show one of 3 screens. A blank screen will show when the portable battery isn't on. The sampling screen will show when my Edge Impulse model is reading the data that it is receiving from the Arduino Nano. After the sampling screen shows for three seconds the results from the Edge Impulse Model will display. This is the 3rd and final screen my device can show. This screen will show the probability that the exercise the user did is one of the three classes (full_bow, arm_twists, and no movement).
+
+![Headstone Image](3Milestone_Figure1.png)
+<br>
+**Figure 1:** These three images show my final Fitness Rehab Device.
+
+&emsp; &emsp; The first step to finishing my 3rd milestone was 3D printing a box that would hold my Arduino Nano, an OLED screen, and switch. **Figure 2** shows my completed box design. I used Fusion 360 in order to design my 3D printed box. An early challenge I ran into with this box design was how would the box be able to close and open so that I could have access to the components of the circuit at any time. I ultimately came to the conclusion that a sliding lid would be the best option that could securely open and close the box. This design made my box simple because the friction of the 3D printed plastic was enough to keep the sliding lid in place. This made it so that no locking mechanism would be needed. Another challenge that I faced with making my 3D box was the portable battery. This particular battery needed to power my circuit was bulky and heavy. If I were to put the portable battery into the box the box would have to be bulky and heavy. One of my classmates working on a fall detection project had worked with a similar portable charger and put it in her pocket. I took inspiration from this and designed my box in a way so that there was an extra hole in one of the sides of the box for the USB to USB-C cable to stick through. This solution meant that a small 3D printed box would be on the user’s arm, a USB to USB-C cable would run from the box to the user’s pocket, and the portable battery would be in the user’s pocket. This made the design of my box much smaller and lighter. This was important for me to do because I wanted the box to be as compact as possible so that the user could barely tell that my device was on their arm. However I also ran into other problems with my box. The 3D printed box that I created using Fusion 360 was a little tight and therefore it was hard to fit all the components of my circuit together. In order to overcome this challenge I had to file down and take out the right wall (check **Figure 2** for which face of the box this was).
+
+![Headstone Image](3Milestone_Figure2.png)
+<br>
+**Figure 2:** This diagram uses images that were taken from the file that I used to 3D print my box. It clearly shows where the holes in my box are and what they are going to be used for.
+
+&emsp; &emsp; The other main element of my 3rd milestone was to get my OLED screen to show some sort of progress that the user is doing based off of my trained model on Edge Impulse. In my original project instructions, I had code that could be used to show a progress bar on the OLED based on the user's shoulder movements and a Edge Impulse model. However I ran into many problems with this code. Since someone else had written the code, I didn't have a good understanding of how the different elements of the code worked together which made it extremely difficult to debug and add any modifications. I ran into troubles such as the screen not switching to the progress bar, the display not turning on, and the progress screen not updating. Ultimately, I created my own code for my OLED screen that would show when the Edge Impulse model is sampling and the probability that the user is doing arm twists or full bow. This way I would have more control over what was happening on my OLED and freedom to design what was on the display however I wanted. The code that I used for this project is in the code section on this site.
+<br>
+&emsp; &emsp; One of the main problems that I faced was when I would combine my Edge Impulse code with my OLED display code. The problem I faced was that my Edge Impulse code had a while loop in the loop section of the code. This would mean that the OLED screen would run for a couple minutes but then freeze. This occurred because the Arduino would be too backed up because of all the loops. In order to overcome this problem I had to select the non continuous version of the Edge Impulse code. Not only was the Edge Impulse code for the non continuous version shorter but it didn't have a while loop and prevented the OLED screen from freezing.
+<br>
+&emsp; &emsp; The main element to my project is my Edge Impulse model. **Figure 3** shows how my Edge Impulse Model works. My input layer has 39 features, my first dense layer has 20 neurons, my second dense layer has 10 neurons, and my output layer has 3 classes. The input layer is where the neural network receives the data. The first and second dense layers of my neural network are responsible for the performance of my model. The output layer is where the result is found for the neural network. The output layer in my neural network has 3 output classes for arm twists, full bow, and no movement. These are the only possible results for this neural network.
+
+![Headstone Image](3Milestone_Figure3.png)
+<br>
+**Figure 3:** This diagram shows the fully connected neural network of my Edge Impulse model
+
+&emsp; &emsp; **Figure 4** shows the accuracy of my model on the training data and testing data. The accuracy of my model on training data is 100.0%. This is when the model runs with data that was used to train the model. The accuracy of my model on testing data was 99.40%. This percentage shows how accurately my model was able to classify data in the correct class with data that it hasn't seen. **Figure 5** shows why having a train and test set is important. If a machine learning model has a high accuracy with the train data set and a low accuracy with the test data this means that the model is memorizing the data instead of getting trained.
+
+![Headstone Image](3Milestone_Figure3.png)
+<br>
+**Figure 4:** This diagram shows the accuracy of my Edge Impulse Model with the training and testing data.
+
+![Headstone Image](Figure4.png)
+<br>
+Source: <a href="https://www.v7labs.com/blog/train-validation-test-set"> Link </a> 
+**Figure 5:** This diagram shows the accuracy of my Edge Impulse Model with the training and testing data.
+
 <!--- **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.** -->
 
 <!---
