@@ -193,16 +193,200 @@ recovery. Acc is the acronym for acceleration and gyr is the acronym for gyrosco
 <!--- Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. -->
 
 ```c++
-void setup() {
+/* Edge Impulse ingestion SDK
+ * Copyright (c) 2022 EdgeImpulse Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+/* Includes ---------------------------------------------------------------- */
+#include <Bluestamp_Project_inferencing.h>
+#include <Arduino_LSM9DS1.h> //Click here to get the library: https://www.arduino.cc/reference/en/libraries/arduino_bmi270_bmm150/
+
+/* Constant defines -------------------------------------------------------- */
+#define CONVERT_G_TO_MS2    9.80665f
+#define MAX_ACCEPTED_RANGE  2.0f        // starting 03/2022, models are generated setting range to +-2, but this example use Arudino library which set range to +-4g. If you are using an older model, ignore this value and use 4.0f instead
+#include <Adafruit_SSD1306.h>
+#include <Wire.h>
+
+Adafruit_SSD1306 display(128, 64, &Wire, -1);
+/*
+ ** NOTE: If you run into TFLite arena allocation issue.
+ **
+ ** This may be due to may dynamic memory fragmentation.
+ ** Try defining "-DEI_CLASSIFIER_ALLOCATION_STATIC" in boards.local.txt (create
+ ** if it doesn't exist) and copy this file to
+ ** `<ARDUINO_CORE_INSTALL_PATH>/arduino/hardware/<mbed_core>/<core_version>/`.
+ **
+ ** See
+ ** (https://support.arduino.cc/hc/en-us/articles/360012076960-Where-are-the-installed-cores-located-)
+ ** to find where Arduino installs cores on your machine.
+ **
+ ** If the problem persists then there's not enough memory for this model and application.
+ */
+
+/* Private variables ------------------------------------------------------- */
+static bool debug_nn = false; // Set this to true to see e.g. features generated from the raw signal
+
+/**
+* @brief      Arduino setup function
+*/
+void setup()
+{
   // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
+  // Initialize with I2C address 0x3C (for the 128x64 OLED)
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // Use SSD1306_SWITCHCAPVCC for most displays
+
+  // Display some text
+  display.display();  // Display initial content
+  delay(2000);        // Delay 2 seconds
+
+  // Clear the display and set text color to white
+  display.clearDisplay();
+  display.setTextColor(WHITE);
+  display.setTextSize(1);      // Normal 1:1 pixel scale
+  display.setCursor(0, 0);     // Start at top-left corner
+  display.println("hello world");  // Print a message
+  display.display();  // Update the display with the new content
+
+  delay(1000);
+  display.clearDisplay();
+  display.display();
+
+    // put your setup code here, to run once:
+    Serial.begin(115200);
+    // comment out the below line to cancel the wait for USB connection (needed for native USB)
+    //while (!Serial);
+    Serial.println("Edge Impulse Inferencing Demo");
+
+    if (!IMU.begin()) {
+        ei_printf("Failed to initialize IMU!\r\n");
+    }
+    else {
+        IMU.setContinuousMode();
+        ei_printf("IMU initialized\r\n");
+    }
+
+    if (EI_CLASSIFIER_RAW_SAMPLES_PER_FRAME != 3) {
+        ei_printf("ERR: EI_CLASSIFIER_RAW_SAMPLES_PER_FRAME should be equal to 3 (the 3 sensor axes)\n");
+        return;
+    }
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-
+/**
+ * @brief Return the sign of the number
+ * 
+ * @param number 
+ * @return int 1 if positive (or 0) -1 if negative
+ */
+float ei_get_sign(float number) {
+    return (number >= 0.0) ? 1.0 : -1.0;
 }
+
+/**
+* @brief      Get data and run inferencing
+*
+* @param[in]  debug  Get debug info if true
+*/
+void loop()
+{
+  //display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // Use SSD1306_SWITCHCAPVCC for most displays
+    ei_printf("\nStarting inferencing in 2 seconds...\n");
+
+    delay(2000);
+
+    ei_printf("Sampling...\n");
+    
+    display.clearDisplay();
+    display.display();
+    display.setTextColor(WHITE);
+    display.setTextSize(2);      // Normal 1:1 pixel scale
+    display.setCursor(0, 0);
+    display.print("Sampling...");
+    display.display();
+
+    // Allocate a buffer here for the values we'll read from the IMU
+    float buffer[EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE] = { 0 };
+
+    for (size_t ix = 0; ix < EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE; ix += 3) {
+        // Determine the next tick (and then sleep later)
+        uint64_t next_tick = micros() + (EI_CLASSIFIER_INTERVAL_MS * 1000);
+
+        IMU.readAcceleration(buffer[ix], buffer[ix + 1], buffer[ix + 2]);
+
+        for (int i = 0; i < 3; i++) {
+            if (fabs(buffer[ix + i]) > MAX_ACCEPTED_RANGE) {
+                buffer[ix + i] = ei_get_sign(buffer[ix + i]) * MAX_ACCEPTED_RANGE;
+            }
+        }
+
+        buffer[ix + 0] *= CONVERT_G_TO_MS2;
+        buffer[ix + 1] *= CONVERT_G_TO_MS2;
+        buffer[ix + 2] *= CONVERT_G_TO_MS2;
+
+        delayMicroseconds(next_tick - micros());
+    }
+
+    // Turn the raw buffer in a signal which we can the classify
+    signal_t signal;
+    int err = numpy::signal_from_buffer(buffer, EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE, &signal);
+    if (err != 0) {
+        ei_printf("Failed to create signal from buffer (%d)\n", err);
+        return;
+    }
+
+    // Run the classifier
+    ei_impulse_result_t result = { 0 };
+
+    err = run_classifier(&signal, &result, debug_nn);
+    if (err != EI_IMPULSE_OK) {
+        ei_printf("ERR: Failed to run classifier (%d)\n", err);
+        return;
+    }
+
+    // print the predictions
+    ei_printf("Predictions ");
+    ei_printf("(DSP: %d ms., Classification: %d ms., Anomaly: %d ms.)",
+        result.timing.dsp, result.timing.classification, result.timing.anomaly);
+    ei_printf(": \n");
+    display.clearDisplay();
+    display.display();
+    
+
+  display.setTextColor(WHITE);
+  display.setTextSize(1.1);      // Normal 1:1 pixel scale
+  display.setCursor(0, 0); 
+
+    for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
+       // ei_printf("    %s: %.5f\n", result.classification[ix].label, result.classification[ix].value);
+       display.print(result.classification[ix].label);
+       display.print(": ");
+       display.println(result.classification[ix].value); // print the probability
+    }
+
+#if EI_CLASSIFIER_HAS_ANOMALY == 1
+    ei_printf("    anomaly score: %.3f\n", result.anomaly);
+   // display.println("    anomaly score: %.3f\n", result.anomaly);
+#endif
+      display.display();  // Update the display with the new content
+      delay(1000);
+
+}     
+
+#if !defined(EI_CLASSIFIER_SENSOR) || EI_CLASSIFIER_SENSOR != EI_CLASSIFIER_SENSOR_ACCELEROMETER
+#error "Invalid model for current sensor"
+#endif
+
 ```
 
 # Bill of Materials
